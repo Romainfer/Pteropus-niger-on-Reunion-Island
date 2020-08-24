@@ -2,10 +2,8 @@
 #                                                                                                                                                 #
 #                                 Etude de l'ecologie de la Roussette Noire (Pteropus niger) sur l Ile de La Reunion                              #
 #                                                                                                                                                 #
-#                               Script d analyse de la precicion des points GPS des arbres en deux parties distinctes : 
-#                                      par modalites (partie I) et sur une un labse de temps plus long (partie II)                                                #
-#                                                                                                                                                 #               
-#                                                         ------ SCRIPT PARTIE annexe------                                                       #
+#                               Script d analyse de la precicion des points GPS des arbres en deux parties distinctes :                           #
+#                                      par modalites (partie I) et sur une un labse de temps plus long (partie II)                                #
 #                                                                                                                                                 #
 #                                                           Romain FERNANDEZ - Juin 2020                                                          #
 #                                                                                                                                                 #
@@ -47,8 +45,8 @@ library(reshape2) #fonction melt
 
 chemin_BDD <- "H:/Precisions_GPS/Test_4_Balise_MILSAR/987010" # Entrer le chemin du fichier tableur (avec .csv) contenant les points GPS
 
-Latitude <- "Latitude.decimal"   # Entrer le nom de la colonne contenant les données Latitude dans le fichier shapefile precedent (donnée projetees = nombre numerique)
-Longitude <- "Longitude.decimal"  # Entrer le nom de la colonne contenant les données Longitude dans le fichier shapefile precedent (donnée projetees = nombre numerique
+Latitude <- "Latitude.decimal"   # Entrer le nom de la colonne contenant les donnÃ©es Latitude dans le fichier shapefile precedent (donnÃ©e projetees = nombre numerique)
+Longitude <- "Longitude.decimal"  # Entrer le nom de la colonne contenant les donnÃ©es Longitude dans le fichier shapefile precedent (donnÃ©e projetees = nombre numerique
 ID_point <- "name"         # Entrer le nom de la colonne stockant l identifiant du point dans le fichier shapefile precedent
 
 
@@ -170,9 +168,9 @@ write.csv(x = Tab_Garmin64S_median, file = paste(sortie, "_point_median.csv", se
 
 # STEP 1 : Entrer les chemins des fichiers GPX a traiter 
 
-chemin_GPX <- "H:/Precisions_GPS/Test_3_Echantillonnage_normal_et_1s/Echantillonnage_1s_pendant_15min_2nd/Piste_2020-05-12 180307_GPS_neuf" # Trace en GPX (sasn .gpx) du GPS n°1
+chemin_GPX <- "H:/Precisions_GPS/Test_3_Echantillonnage_normal_et_1s/Echantillonnage_1s_pendant_15min_2nd/Piste_2020-05-12 180307_GPS_neuf" # Trace en GPX (sasn .gpx) du GPS nÂ°1
 
-chemin_GPX_2 <- "H:/Precisions_GPS/Test_3_Echantillonnage_normal_et_1s/Echantillonnage_1s_pendant_15min_2nd/Piste_2020-05-12 180337_GPS_pas_neuf" # Trace en GPX (sans .gpx) du GPS n°2
+chemin_GPX_2 <- "H:/Precisions_GPS/Test_3_Echantillonnage_normal_et_1s/Echantillonnage_1s_pendant_15min_2nd/Piste_2020-05-12 180337_GPS_pas_neuf" # Trace en GPX (sans .gpx) du GPS nÂ°2
 
 fichier_sortie <- "H:/Precisions_GPS/Test_3_Echantillonnage_normal_et_1s/Echantillonnage_1s_pendant_15min_2nd/Piste_2020-05-12_total" # Nom des fichiers de fusion (csv + mean + median) des waypoints en sortie 
 
@@ -336,7 +334,7 @@ for (i in 1:nrow(extract_09)){
 
 
 hist(result_09, freq = T,
-     main = "Resultats de la balise MILSAR n°987009",
+     main = "Resultats de la balise MILSAR nÂ°987009",
      ylab = "Nombre de points",
      xlab = "Distance au point de reference (m)")
 
@@ -357,7 +355,7 @@ for (i in 1:nrow(extract_02)){
 result_02 
 
 hist(result_02, freq = T,
-     main = "Resultats de la balise MILSAR n°987002",
+     main = "Resultats de la balise MILSAR nÂ°987002",
      ylab = "Nombre de points",
      xlab = "Distance au point de reference (m)")
 
@@ -376,7 +374,7 @@ for (i in 1:nrow(extract_08)){
 
 
 hist(result_08, freq = T,
-     main = "Resultats de la balise MILSAR n°987009",
+     main = "Resultats de la balise MILSAR nÂ°987009",
      ylab = "Nombre de points",
      xlab = "Distance au point de reference (m)")
 
@@ -496,8 +494,8 @@ BDD_GPX_median <- data.frame(1,2)
 colnames(BDD_GPX_median) <- c("Lon", "Lat")
 
 
-# Calculer les points medians pour chacune des p�riodes 
-# Erreur sur la derniere valeur pas importante, dernier serie de point entre la derni�re valeur et n+1 impossible a calculer (normal)
+# Calculer les points medians pour chacune des périodes 
+# Erreur sur la derniere valeur pas importante, dernier serie de point entre la dernière valeur et n+1 impossible a calculer (normal)
 for (i in 1:length(vect_seq)) {
   
   print(i)
@@ -575,8 +573,8 @@ BDD_GPX_median <- data.frame(1,2)
 colnames(BDD_GPX_median) <- c("Lon", "Lat")
 
 
-# Calculer les points medians pour chacune des p�riodes 
-# Erreur sur la derniere valeur pas importante, dernier serie de point entre la derni�re valeur et n+1 impossible a calculer (normal)
+# Calculer les points medians pour chacune des périodes 
+# Erreur sur la derniere valeur pas importante, dernier serie de point entre la dernière valeur et n+1 impossible a calculer (normal)
 for (i in 1:length(vect_seq)) {
   
   print(i)
@@ -657,8 +655,8 @@ BDD_GPX_median <- data.frame(1,2)
 colnames(BDD_GPX_median) <- c("Lon", "Lat")
 
 
-# Calculer les points medians pour chacune des p�riodes 
-# Erreur sur la derniere valeur pas importante, dernier serie de point entre la derni�re valeur et n+1 impossible a calculer (normal)
+# Calculer les points medians pour chacune des périodes 
+# Erreur sur la derniere valeur pas importante, dernier serie de point entre la dernière valeur et n+1 impossible a calculer (normal)
 for (i in 1:length(vect_seq)) {
   
   print(i)
@@ -724,7 +722,7 @@ graph1 <- ggplot(BDD_tot, aes(x = minutes, y = valeur, fill = donnees, colour = 
 
 graph1 <- graph1 + scale_color_manual(values=c('#999999','#E69F00', '#A91101'))
 
-graph1 <- graph1 + xlab("Somme des periodes de temps (minutes)") + ylab("Distance au point de r�f�rence (m)") 
+graph1 <- graph1 + xlab("Somme des periodes de temps (minutes)") + ylab("Distance au point de référence (m)") 
 
 graph1 <-  graph1 + theme(legend.position = "bottom", legend.title = element_blank())
 
@@ -732,7 +730,7 @@ graph1 <- graph1 + scale_x_continuous(breaks=seq(0, 700, by = 100))
 
 ### Exporter 
 pdf(paste(sortie, "Variation_precision_en_fonction_du_temps.pdf", sep = "/"))
-print(graph1)     # Graphique 1 --> dans la premi�re page du PDF
+print(graph1)     # Graphique 1 --> dans la première page du PDF
 dev.off() 
 
 
@@ -799,7 +797,7 @@ colnames(GPX_bind) <- c("Lon", "Lat", "ele", "time", "Num_ligne")
 BDD_median <- data.frame(1, 2)
 
 # Calculer les points median  
-# Erreur sur la derniere valeur pas importante, dernier serie de point entre la derni�re valeur et n+1 impossible a calculer (normal)
+# Erreur sur la derniere valeur pas importante, dernier serie de point entre la dernière valeur et n+1 impossible a calculer (normal)
 
 i <- 1
 for (i in seq(from = 1, to = length(indice), by = 2)) { #i+2 car ajouter point Garmin1 + garmin2
@@ -877,7 +875,7 @@ colnames(GPX1_df) <- c("Lon", "Lat", "ele", "time", "Num_ligne")
 BDD_median <- data.frame(1, 2)
 
 # Calculer les points median  
-# Erreur sur la derniere valeur pas importante, dernier serie de point entre la derni�re valeur et n+1 impossible a calculer (normal)
+# Erreur sur la derniere valeur pas importante, dernier serie de point entre la dernière valeur et n+1 impossible a calculer (normal)
 
 for (i in 1:length(indice)) {
   
@@ -960,7 +958,7 @@ colnames(GPX2_df) <- c("Lon", "Lat", "ele", "time", "Num_ligne")
 BDD_median <- data.frame(1, 2)
 
 # Calculer les points median  
-# Erreur sur la derniere valeur pas importante, dernier serie de point entre la derni�re valeur et n+1 impossible a calculer (normal)
+# Erreur sur la derniere valeur pas importante, dernier serie de point entre la dernière valeur et n+1 impossible a calculer (normal)
 for (i in 1:length(indice)) {
   
   print(i)
@@ -1025,7 +1023,7 @@ graph1 <- ggplot(BDD_tot, aes(x = nb_point, y = valeur, fill = vect, colour = ve
   geom_line()
 
 
-graph1 <- graph1 + xlab("Nombre de points cummul�s") + ylab("Distance au point de r�f�rence (m)")
+graph1 <- graph1 + xlab("Nombre de points cummulés") + ylab("Distance au point de référence (m)")
 
 graph1 <- graph1 + scale_color_manual(values=c('#999999','#E69F00', '#A91101'))
 
@@ -1035,7 +1033,7 @@ graph1 <- graph1 + scale_x_continuous(breaks=seq(0, 1500, by = 250))
 
 ### Exporter 
 pdf(paste(sortie,"/", "Variation_precision_en_fonction_du_nb_pt_", nom, ".pdf", sep = ""))
-print(graph1)     # Graphique 1 --> dans la premi�re page du PDF
+print(graph1)     # Graphique 1 --> dans la première page du PDF
 dev.off() 
 
 
@@ -1117,5 +1115,5 @@ graph1 <- graph1 + xlab("Longitude") + ylab("Latitude")
 
 ### Exporter 
 pdf(paste(sortie,"/", "Analyse_du_biais_plot_X_Y_", nom, ".pdf", sep = ""))
-print(graph1)     # Graphique 1 --> dans la premi�re page du PDF
+print(graph1)     # Graphique 1 --> dans la première page du PDF
 dev.off() 
