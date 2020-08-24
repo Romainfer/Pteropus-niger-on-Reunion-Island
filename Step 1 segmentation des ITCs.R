@@ -262,7 +262,7 @@ execGRASS("r.in.gdal",
           parameters = list(input = paste(getwd(),"/Dalles_MNS/Dalles_fusionnees/MNS_0.25m_Dalles_fusionnees_crop.tif", sep = ""), 
                             output = "GRASS_MNS"))
 
-# Region : Pour que la sortie raster ait la même étendue et la même taille que le MNT
+# Region : Pour que la sortie raster ait la mÃªme Ã©tendue et la mÃªme taille que le MNT
 execGRASS("g.region", raster = "GRASS_MNS")
 #execGRASS("g.region", res = "0.25")
 
@@ -283,9 +283,9 @@ execGRASS(cmd = "r.out.gdal",
 
 
 # Deconnecter l'environnement
-unlink_.gislock() #supprimer le lien entre l'environnement créé de GRASS et R
+unlink_.gislock() #supprimer le lien entre l'environnement crÃ©Ã© de GRASS et R
 remove_GISRC() #supprimer le fichier permettant le positionnant de l'environnement dans "home"
-tempdir() #permet de savoir ou se situe les tache d'arrière plan de Grass
+tempdir() #permet de savoir ou se situe les tache d'arriÃ¨re plan de Grass
 
 
 
@@ -502,7 +502,7 @@ writeRaster(NDVI_mask, filename = paste(sortie_img, "Mask_NDVI.tif", sep = ""), 
 
 ############################ STEP 8.3 (lancer avec chemins) : Application du masque NDVI sur le MNC -------
 
-# Remarque : Quitter R et re-ouvrir pour liberer la memoire tampon de Rstudio avant de lancer ce STEP et apr�s avoir fait tourne le STEP 8.2
+# Remarque : Quitter R et re-ouvrir pour liberer la memoire tampon de Rstudio avant de lancer ce STEP et après avoir fait tourne le STEP 8.2
 
 
 # Chemins
@@ -554,7 +554,7 @@ writeRaster(elevation_mask, filename = paste(sortie_img, "Mask_elevation.tif", s
 
 ############################ STEP 9.2 (lancer avec chemins) : Application du masques elevation sur le MNC -------
 
-# Remarque : Quitter R et re-ouvrir pour liberer la memoire tampon de Rstudio avant de lancer ce STEP et apr�s avoir fait tourne le STEP 9.1
+# Remarque : Quitter R et re-ouvrir pour liberer la memoire tampon de Rstudio avant de lancer ce STEP et après avoir fait tourne le STEP 9.1
 
 
 
@@ -623,7 +623,7 @@ y.seq <- seq(from = y_origin + 20, to = y_max, by = 500)
 
 
 
-# Boucle : Creer plusieurs masque s�parant le MNC en plusieurs dalles qui sont ensuite segmentees. 
+# Boucle : Creer plusieurs masque séparant le MNC en plusieurs dalles qui sont ensuite segmentees. 
 # Les coordonnees gps des treetops sont aussi ajoutes a la table attributaire de la couche shpefile de delimitation des houppiers 
 
 length_X <- length(x.seq)-1 #-1 car calcule des dalles entre x1 et x+1
@@ -795,7 +795,7 @@ for (i in seq(from = 1, to = length(x.seq), by = 5)){
     
     
     ############  Pour x de 1 a 5 et j = 1
-    print("calcule de x � x+5 et j=1")
+    print("calcule de x à x+5 et j=1")
     try(merg <-readOGR(paste(sortie_seg, "/Dalle_segmentation_X_", x.seq[i], "_Y_", y.seq[j], ".shp", sep="")))
     if(exists("merg") == FALSE){
       
@@ -856,7 +856,7 @@ for (i in seq(from = 1, to = length(x.seq), by = 5)){
     
     
     ############ Pour x de 1 a 5 et j = 2
-    print("calcule de x � x+5 et j=2")
+    print("calcule de x à x+5 et j=2")
     
     try(merg <-readOGR(paste(sortie_seg, "/Dalle_segmentation_X_", x.seq[i], "_Y_", y.seq[j+1], ".shp", sep="")))
     if(exists("merg") == FALSE){
@@ -916,7 +916,7 @@ for (i in seq(from = 1, to = length(x.seq), by = 5)){
   
     
     ############ Pour x de 1 a 5 et j = 3
-    print("calcule de x � x+5 et j=3")
+    print("calcule de x à x+5 et j=3")
     
     try(merg <-readOGR(paste(sortie_seg, "/Dalle_segmentation_X_", x.seq[i], "_Y_", y.seq[j+2], ".shp", sep="")))
     if(exists("merg") == FALSE){
@@ -976,7 +976,7 @@ for (i in seq(from = 1, to = length(x.seq), by = 5)){
     
     
     ############ Pour x de 1 a 5 et j = 4
-    print("calcule de x � x+5 et j=4")
+    print("calcule de x à x+5 et j=4")
     try(merg <-readOGR(paste(sortie_seg, "/Dalle_segmentation_X_", x.seq[i], "_Y_", y.seq[j+3], ".shp", sep="")))
     if(exists("merg") == FALSE){
       
@@ -1036,7 +1036,7 @@ for (i in seq(from = 1, to = length(x.seq), by = 5)){
     
     
     ############ Pour x de 1 a 5 et j = 5
-    print("calcule de x � x+5 et j=5")
+    print("calcule de x à x+5 et j=5")
     
     try(merg <-readOGR(paste(sortie_seg, "/Dalle_segmentation_X_", x.seq[i], "_Y_", y.seq[j+4], ".shp", sep="")))
     if(exists("merg") == FALSE){
@@ -1175,7 +1175,7 @@ area <- area.poly(poly_auto)
 poly_auto <- cbind(poly_auto, area)
 
 
-# Supprimer les ITC < 5m�                             - de 5m� ?? ## ??##?? ## ??## ??##?? ##?? ## ??## ??## ??##?? ##?? ## ??##?? ##
+# Supprimer les ITC < 5m²                             - de 5m² ?? ## ??##?? ## ??## ??##?? ##?? ## ??## ??## ??##?? ##?? ## ??##?? ##
 poly_auto <- filter(poly_auto, area > 5)
 
 # Exportation
