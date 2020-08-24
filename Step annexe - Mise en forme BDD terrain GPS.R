@@ -4,8 +4,6 @@
 #                                                                                                                                                 #
 #                         -- Script de transformation des donnees GPS et de terrain pour faire la base de donnees finale --                       #
 #                                                                                                                                                 #               
-#                                                         ------ SCRIPT 3.1 ------                                                                #
-#                                                                                                                                                 #
 #                                                        Romain FERNANDEZ - Mai 2020                                                              #
 #                                                                                                                                                 #
 ###################################################################################################################################################
