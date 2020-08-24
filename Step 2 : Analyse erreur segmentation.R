@@ -4,8 +4,6 @@
 #                                                                                                                                                 #
 #                                   -- Script de calcul de l erreur de segmentation de la courronne des arbres --                                 #
 #                                                                                                                                                 #               
-#                                                         ------ SCRIPT PARTIE 1.2 ------                                                         #
-#                                                                                                                                                 #
 #                                                           Romain FERNANDEZ - Mars 2020                                                          #
 #                                                                                                                                                 #
 ###################################################################################################################################################
@@ -336,7 +334,7 @@ pdf(paste(sortie, "/", "Frequence_airs_poly_auto_ref", ".pdf", sep = "")) # Impr
 hist1 <- hist(x = tab_tot$poly_ref_area,
               freq = TRUE,
               main = "Frequences des aires des cimes d'arbres delimites manuellement",
-              xlab = "Aire des cimes (m²)",
+              xlab = "Aire des cimes (mÂ²)",
               ylab = "Nombre de polygones")
 
 
@@ -345,7 +343,7 @@ hist1 <- hist(x = tab_tot$poly_ref_area,
 hist2 <- hist(x = tab_tot$poly_auto_area,
               freq = TRUE,
               main = "Frequences des aires des cimes d'arbres delimites automatiquement",
-              xlab = "Aire des cimes (m²)",
+              xlab = "Aire des cimes (mÂ²)",
               ylab = "Nombre de polygones")
 
 
@@ -359,9 +357,9 @@ for (i in 1:length(poly_ref_area)){
 
 hist_diff <- hist(x = diff,
                   freq = TRUE,
-                  main = "Frequences de la différence des aires des cimes d'arbres delimites automatiquement et manuellement",
-                  xlab = "Différence d'aire (m²)",
-                  ylab = "Fréquence")
+                  main = "Frequences de la diffÃ©rence des aires des cimes d'arbres delimites automatiquement et manuellement",
+                  xlab = "DiffÃ©rence d'aire (mÂ²)",
+                  ylab = "FrÃ©quence")
 
 
 dev.off() # fermer le PDF
