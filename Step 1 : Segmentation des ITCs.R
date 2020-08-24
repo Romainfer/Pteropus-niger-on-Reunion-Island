@@ -4,8 +4,6 @@
 #                                                                                                                                                 #
 #                               -- Script de segmentation de la courronne des arbres a l aide du MNT et MNS --                                    #
 #                                                                                                                                                 #               
-#                                                       ------ SCRIPT PARTIE 1.1 ------                                                           #
-#                                                                                                                                                 #
 #                                                        Romain FERNANDEZ - Mars 2020                                                             #
 #                                                                                                                                                 #
 ###################################################################################################################################################
