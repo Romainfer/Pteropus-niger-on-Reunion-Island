@@ -4,8 +4,6 @@
 #                                                                                                                                                 #
 #                                      -- Script de classification supervisee de la courronne des arbres  --                                      #
 #                                                                                                                                                 #               
-#                                                         ------ SCRIPT PARTIE 3.1 ------                                                         #
-#                                                                                                                                                 #
 #                                                           Romain FERNANDEZ - Juin 2020                                                          #
 #                                                                                                                                                 #
 ###################################################################################################################################################
@@ -50,7 +48,7 @@ dossier <- "D:/Donnees Terrain/Dalles" #Racine du chemin la ou sont situe tous l
 
 sortie <- "D:/Output_R_disque/Classification/Classification_supervisee"
 
-buf <- 1 #Buffer en metres appliqué au points GPS pour extraire la signature spectrale des arbres
+buf <- 1 #Buffer en metres appliquÃ© au points GPS pour extraire la signature spectrale des arbres
 
 
 
@@ -106,7 +104,7 @@ write.csv(dataset, file = paste(sortie, "Dataset_non_filtre_totale.csv", sep = "
 ### Transformer le dataset .csv shapefile
 dataset <- read.csv(file = paste(sortie, "Dataset_non_filtre_totale.csv", sep = "/"), header = TRUE)
 
-# Supprimer les ligne sans coordonnées qui ne sont donc pas des arbres utilises dans le dataset
+# Supprimer les ligne sans coordonnÃ©es qui ne sont donc pas des arbres utilises dans le dataset
 dataset <- drop_na(dataset, Longitude) 
 
 
@@ -270,7 +268,7 @@ indices_texture <- "D:/Output_R_disque/Classification/Zone_reduite/Indices_textu
 
 chemin_dataset <-"D:/Output_R_disque/Classification/Classification_supervisee" #Sans "/" a la fin. Dataset contenant les polygones d entrainement et de verification
 
-buf <- 1 #Buffer en metres appliqué au points GPS pour extraire la signature spectrale des arbres
+buf <- 1 #Buffer en metres appliquÃ© au points GPS pour extraire la signature spectrale des arbres
 
 nom_fichier_dataset <- paste("Dataset_training_buffer", "_", buf, "m", sep ="") #Pas d extension (fichier shapefile)
 # ATTENTION !! : dataset doit avoir en 3 premieres colonnes : X (Numerique = id), Espc_lat (nom latin esp), Espc_vr (nom vernaculaire esp)
@@ -284,7 +282,7 @@ nb_esp <- 1 # Effectif a partir du quel l espece est retenue dans la classificat
 vars_non_corr <- c("NDVI", "Blue_band", "Red_band","Nir_band", 
                    "mean", "contrast", "entropy") 
 # vecteur des noms de variables non correle conserve pour le modele SVM -> cf resultat matrice correlation
-# Utiliser les noms bien orthographiés des predicteurs de la matrice de correlation
+# Utiliser les noms bien orthographiÃ©s des predicteurs de la matrice de correlation
 
 
 
@@ -500,7 +498,7 @@ colnames(dataset_vars_freq) <-  c("Espc_lt", "Effectif")
 graph11 <- ggplot(dataset_vars_freq, aes(x = Espc_lt, y = Effectif)) +
   geom_bar(stat = "identity")
 
-graph11 <-  graph11 + xlab("Espèces") + ylab("Nombres de données")
+graph11 <-  graph11 + xlab("EspÃ¨ces") + ylab("Nombres de donnÃ©es")
 
 graph11 <-  graph11 + coord_flip()
 
@@ -557,7 +555,7 @@ matrix_corr1 <- cor(dataset_vars, method = c("pearson"))
 matrix_corr <- round(matrix_corr1, 2) 
 
 
-# Obtenir le triangle supérieur et mettre NA a la place des valeurs inferieures : Creert fonction et l appliquer
+# Obtenir le triangle supÃ©rieur et mettre NA a la place des valeurs inferieures : Creert fonction et l appliquer
 # get_upper_tri <- function(matrix){
 #   matrix[lower.tri(matrix)] <- NA
 #   return(matrix)
