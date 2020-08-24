@@ -4,8 +4,6 @@
 #                                                                                                                                                 #
 #                                     -- Script de classification non supervisee de la courronne des arbres  --                                   #
 #                                                                                                                                                 #               
-#                                                         ------ SCRIPT PARTIE 3.2 ------                                                         #
-#                                                                                                                                                 #
 #                                                           Romain FERNANDEZ - Juin 2020                                                          #
 #                                                                                                                                                 #
 ###################################################################################################################################################
@@ -56,7 +54,7 @@ dossier <- "D:/Donnees Terrain/Dalles" #Racine du chemin la ou sont situe tous l
 
 sortie <- "D:/Output_R_disque/Classification/Classification_non_supervisee/Finale"
 
-buf <- 1 #Buffer en metres appliqué au points GPS pour extraire la signature spectrale des arbres
+buf <- 1 #Buffer en metres appliquÃ© au points GPS pour extraire la signature spectrale des arbres
 
 
 
@@ -112,7 +110,7 @@ write.csv(dataset, file = paste(sortie, "Dataset_non_filtre_totale.csv", sep = "
 ### Transformer le dataset .csv shapefile
 dataset <- read.csv(file = paste(sortie, "Dataset_non_filtre_totale.csv", sep = "/"), header = TRUE)
 
-# Supprimer les ligne sans coordonnées qui ne sont donc pas des arbres utilises dans le dataset
+# Supprimer les ligne sans coordonnÃ©es qui ne sont donc pas des arbres utilises dans le dataset
 dataset <- drop_na(dataset, Longitude) 
 
 
@@ -280,7 +278,7 @@ indices_texture <- paste("D:/Output_R_disque/Classification/Zone_reduite",
                                                                             
 chemin_dataset <-"D:/Output_R_disque/Classification/Classification_non_supervisee/Finale" #Sans "/" a la fin. Dataset contenant les polygones d entrainement et de verification
 
-buf <- 1 #Buffer en metres appliqué au points GPS pour extraire la signature spectrale des arbres
+buf <- 1 #Buffer en metres appliquÃ© au points GPS pour extraire la signature spectrale des arbres
 
 nom_fichier_dataset <- paste("Dataset_training_buffer", "_", buf, "m", sep ="") #Pas d extension (fichier shapefile)
 # ATTENTION !! : dataset doit avoir en 3 premieres colonnes : X (Numerique = id), Espc_lat (nom latin esp), Espc_vr (nom vernaculaire esp)
@@ -535,7 +533,7 @@ colnames(dataset_vars_freq) <-  c("Espc_lt", "Effectif")
 graph11 <- ggplot(dataset_vars_freq, aes(x = Espc_lt, y = Effectif)) +
   geom_bar(stat = "identity")
 
-graph11 <-  graph11 + xlab("Espèces") + ylab("Nombre d'arbres")
+graph11 <-  graph11 + xlab("EspÃ¨ces") + ylab("Nombre d'arbres")
 
 graph11 <- graph11 + scale_y_continuous(breaks = seq(0, max(dataset_vars_freq$Effectif) + 1, 2))
 
@@ -589,7 +587,7 @@ matrix_corr1 <- cor(dataset_vars, method = c("pearson"))
 matrix_corr <- round(matrix_corr1, 2) 
 
 
-# Obtenir le triangle supérieur et mettre NA a la place des valeurs inferieures : Creert fonction et l appliquer
+# Obtenir le triangle supÃ©rieur et mettre NA a la place des valeurs inferieures : Creert fonction et l appliquer
 # get_upper_tri <- function(matrix){
 #   matrix[lower.tri(matrix)] <- NA
 #   return(matrix)
@@ -866,7 +864,7 @@ dev.off()
 # 
 # 
 # 
-# ##### Entropy conditionnelle des classes pour les différents clusters : H(Y|C)
+# ##### Entropy conditionnelle des classes pour les diffÃ©rents clusters : H(Y|C)
 # 
 # r2 <- data.frame()
 # 
@@ -1038,7 +1036,7 @@ print(tab_cor)
 graph1 <- ggplot(tab_cor, aes(x = Espc_lt, y = Nb_cluster)) +
   geom_bar(stat = "identity")
 
-graph1 <-  graph1 + xlab("Espèces") + ylab("Nombres de cluster")
+graph1 <-  graph1 + xlab("EspÃ¨ces") + ylab("Nombres de cluster")
 
 graph1 <- graph1 + scale_y_continuous(breaks = seq(0, max(tab_cor$Nb_cluster) + 1, 2))
 
@@ -1055,7 +1053,7 @@ summary(formule)
 graph2 <- ggplot(tab_cor, aes(x = eff_classif, y = Nb_cluster)) +
   geom_point(stat = "identity")
 
-graph2 <-  graph2 + xlab("Nombre d'arbres echantillonnés") + ylab("Nombres de clusters")
+graph2 <-  graph2 + xlab("Nombre d'arbres echantillonnÃ©s") + ylab("Nombres de clusters")
 
 graph2 <-  graph2 + geom_smooth(method = lm, se = FALSE)
 
@@ -1085,7 +1083,7 @@ vect_color <- primary.colors(length(unique(tab_cor_melt$Espc_lt)), steps = 6, no
 graph3 <- ggplot(tab_cor_melt, aes(x = Espc_lt, y = value, fill = Espc_lt)) +
   geom_bar(stat = "identity") +
   
-  xlab("Espèces") + ylab("Pourcentage de pixel") +
+  xlab("EspÃ¨ces") + ylab("Pourcentage de pixel") +
   
   scale_fill_manual(values = vect_color) +
   
@@ -1093,7 +1091,7 @@ graph3 <- ggplot(tab_cor_melt, aes(x = Espc_lt, y = value, fill = Espc_lt)) +
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank()) +
   
-  labs(fill = "Espèces") +
+  labs(fill = "EspÃ¨ces") +
   
   guides(fill = guide_legend(reverse = TRUE)) +
   
