@@ -7,7 +7,7 @@ Ces scripts sont accompagnés d'un rapport réalisé dans le cadre d'un stage de
 Segmentation des houppiers de la zone d'étude grace au Modèle Numérique de Canopé issue de données LiDAR.
 
 ## Step 2 : 
-Analyse de l'erreur de segmentation réalisé dans le step 1.
+Analyse de l'erreur de la segmentation réalisée dans le step 1.
 
 ## Step 3.1 : 
 Application d'une classification suppervisée au jeu de données de terrain grâce à un modèle SVM.
