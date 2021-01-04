@@ -1,4 +1,4 @@
-# La télédétection au service de l’amélioration des connaissances des essences d’arbres fréquentées par Pteropus niger et de sa conservation sur l’île de La Réunion.
+# La télédétection au service de l’amélioration des connaissances des essences d’arbres fréquentées par Pteropus niger pour sa conservation sur l’île de La Réunion.
 
 ## Introduction
 Ces scripts sont accompagnés d'un rapport réalisé dans le cadre d'un stage de Master 1 à l'Ecole Pratique des Hautes Etudes (EPHE) encadré par Gildas MONNIER du Groupe Chiroptères Océan Indien et Thomas CORNULIER de l'Université d'Aberdeen.
